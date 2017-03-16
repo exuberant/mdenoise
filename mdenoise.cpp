@@ -1415,9 +1415,9 @@ void ReadXYZ(FILE* fp)
 
     printf("\nTriangulation...\n");
     if(m_bAddVertices)
-        triangulate("zqBQ",&in,&out,&vorout);
+        triangulate(const_cast<char*>("zqBQ"),&in,&out,&vorout);
     else
-        triangulate("zBQ",&in,&out,&vorout);
+        triangulate(const_cast<char*>("zBQ"),&in,&out,&vorout);
 
     m_nNumVertex = out.numberofpoints;
     m_pf3Vertex = new FVECTOR3[m_nNumVertex];
